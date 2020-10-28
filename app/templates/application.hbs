@@ -1,5 +1,19 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+{{#if user.name}}
+Welcome {{user.name}}
+{{#link-to 'index'}}Home{{/link-to}}
+{{#link-to 'about'}}About{{/link-to}}
+{{#link-to 'contact'}}Contact{{/link-to}}
 
+{{sample-component firstName=firstName lastName=lastName}}
+
+<h3>Change Name</h3>
+{{input value=newFirstName}}
+{{input value=newLastName}}
+<button {{action 'changeName'}}>Change</button>
+<div id="change-count"></div>
 {{outlet}}
+{{else}}
+Plese enter your name
+{{input type='text' value=newUser}}
+<button {{action 'setUser'}}>Log in</button>
+{{/if}}
