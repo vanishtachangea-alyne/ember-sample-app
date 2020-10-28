@@ -4,13 +4,19 @@ Welcome {{user.name}}
 {{#link-to 'about'}}About{{/link-to}}
 {{#link-to 'contact'}}Contact{{/link-to}}
 
+<h2>Calling Sample Component </h2>
 {{sample-component firstName=firstName lastName=lastName}}
 
-<h3>Change Name</h3>
+<h2>Change Name in Application</h2>
 {{input value=newFirstName}}
 {{input value=newLastName}}
 <button {{action 'changeName'}}>Change</button>
 <div id="change-count"></div>
+
+<h2> Notification using Dependency Injection</h2>
+<h3>Enter a message </h3>
+{{input value=message}}
+<button {{action 'notify'}}>Notify</button>
 {{outlet}}
 {{else}}
 Plese enter your name

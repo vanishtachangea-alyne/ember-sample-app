@@ -9,6 +9,6 @@ export default Component.extend({
   didRender() {
     this._super(...arguments);
     this.incrementProperty("count");
-    this.$("#count").html(`Rendered ${this.get("count")} times`);
+    $("#count").html(`Rendered ${this.get("count")} times`);
   },
 });
