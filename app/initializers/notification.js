@@ -4,7 +4,8 @@ export function initialize(application) {
   let message = EmberObject.extend({
     init() {
       Notification.requestPermission().then((result) => {
-        console.log(result);
+        //console.log(result);
+        window.alert(result);
       });
     },
     send(text) {

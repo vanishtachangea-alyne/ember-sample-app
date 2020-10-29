@@ -1,6 +1,7 @@
 import Controller from "@ember/controller";
 import $ from "jquery";
 import { inject as service } from "@ember/service";
+import { Promise } from "rsvp";
 
 export default Controller.extend({
   currentUser: service(),
@@ -23,20 +24,20 @@ export default Controller.extend({
       this.get("notification").send(message);
     },
     createPromise() {
-      let promise = Ember.RSVP.Promise.resolve(
-        Ember.$.getJSON("https://jsonplaceholder.typicode.com/posts/1")
+      let promise = Promise.resolve(
+        $.getJSON("https://jsonplaceholder.typicode.com/posts/1")
       );
       promise
         .then(
           (value) => {
-            Ember.$("#output").html(`Response ${value.title}`);
+            $("#output").html(`Response ${value.title}`);
           },
           (reason) => {
-            Ember.$("#output").html(`Response ${reason.status}`);
+            $("#output").html(`Response ${reason.status}`);
           }
         )
         .finally(() => {
-          Ember.$("#finally").html(`Finally I was resolved`);
+          $("#finally").html(`Finally I was resolved`);
         });
     },
   },

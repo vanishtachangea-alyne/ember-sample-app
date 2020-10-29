@@ -2,7 +2,7 @@
     Welcome to the Categories Route
     <ul>
         {{#each model as |category| }}
-        <li>{{category}}</li>
+        <li>{{category.name}}</li>
         {{/each}}
     </ul>
     {{#link-to 'categories.images'}} Images {{/link-to}}
