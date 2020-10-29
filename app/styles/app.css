@@ -17,7 +17,10 @@ body {
   max-width: 90%;
   min-height: 600px;
 }
-
+.error {
+  color: #c00;
+  font-size: 1.5em;
+}
 .images,
 .description {
   padding: 10px;
