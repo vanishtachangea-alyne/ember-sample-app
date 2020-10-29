@@ -22,5 +22,22 @@ export default Controller.extend({
       let message = this.get("message");
       this.get("notification").send(message);
     },
+    createPromise() {
+      let promise = Ember.RSVP.Promise.resolve(
+        Ember.$.getJSON("https://jsonplaceholder.typicode.com/posts/1")
+      );
+      promise
+        .then(
+          (value) => {
+            Ember.$("#output").html(`Response ${value.title}`);
+          },
+          (reason) => {
+            Ember.$("#output").html(`Response ${reason.status}`);
+          }
+        )
+        .finally(() => {
+          Ember.$("#finally").html(`Finally I was resolved`);
+        });
+    },
   },
 });
