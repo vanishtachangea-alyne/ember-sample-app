@@ -22,4 +22,10 @@ Welcome {{user.name}}
 Plese enter your name
 {{input type='text' value=newUser}}
 <button {{action 'setUser'}}>Log in</button>
+
+<h2> Nested Routes</h2>
+<div class="container">
+    <h3>Welcome to the Application Route</h3>
+    {{outlet}}
+</div>
 {{/if}}

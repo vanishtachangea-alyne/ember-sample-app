@@ -1,0 +1,11 @@
+<div class="categories">
+    Welcome to the Categories Route
+    <ul>
+        {{#each model as |category| }}
+        <li>{{category}}</li>
+        {{/each}}
+    </ul>
+    {{#link-to 'categories.images'}} Images {{/link-to}}
+    {{#link-to 'categories.description'}} Description {{/link-to}}
+    {{outlet}}
+</div>
